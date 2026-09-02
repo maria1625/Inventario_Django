@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+  <head><meta charset="utf-8"><title>Lista de productos</title></head>
+  <body>
+    <h1>Productos</h1>
+    <a href="/productos/crear/">Crear producto</a>
+    <ul>
+      {% for p in productos %}
+        <li>
+          {{ p.nombre }} - <a href="{{ p.pk }}/">Ver</a> |
+          <a href="{{ p.pk }}/editar/">Editar</a> |
+          <a href="{{ p.pk }}/eliminar/">Eliminar</a>
+        </li>
+      {% empty %}
+        <li>No hay productos.</li>
+      {% endfor %}
+    </ul>
+  </body>
+</html>
