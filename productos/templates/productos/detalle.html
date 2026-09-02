@@ -1,0 +1,15 @@
+<!doctype html>
+<html>
+  <head><meta charset="utf-8"><title>Detalle</title></head>
+  <body>
+    <h1>Detalle: {{ producto.nombre }}</h1>
+    <ul>
+      <li>Categoría: {{ producto.categoria }}</li>
+      <li>Precio: {{ producto.precio }}</li>
+      <li>Cantidad: {{ producto.cantidad_stock }}</li>
+      <li>Proveedor: {{ producto.proveedor }}</li>
+      <li>Estado: {{ producto.estado }}</li>
+    </ul>
+    <a href="/productos/">Volver al listado</a>
+  </body>
+</html>
