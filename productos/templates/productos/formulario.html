@@ -1,15 +1,13 @@
 {% extends 'productos/base.html' %}
 
-{% block titulo %}{% if producto %}Editar producto{% else %}Nuevo producto{% endif %}{% endblock %}
+{% block titulo %}{{ accion }} producto{% endblock %}
 
 {% block content %}
 <div class="row justify-content-center">
     <div class="col-md-7">
         <div class="card shadow-sm">
             <div class="card-body">
-                <h3 class="mb-4">
-                    {% if producto %}Editar producto{% else %}Registrar nuevo producto{% endif %}
-                </h3>
+                <h3 class="mb-4">{{ accion }} producto</h3>
 
                 <form method="post">
                     {% csrf_token %}
