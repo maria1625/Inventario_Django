@@ -1,0 +1,43 @@
+{% extends 'productos/base.html' %}
+
+{% block titulo %}Detalle del producto{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-7">
+        <div class="card shadow-sm">
+            <div class="card-body">
+                <h3 class="mb-4">{{ producto.nombre }}</h3>
+                <table class="table">
+                    <tr>
+                        <th>Categoría</th>
+                        <td>{{ producto.categoria }}</td>
+                    </tr>
+                    <tr>
+                        <th>Precio</th>
+                        <td>${{ producto.precio }}</td>
+                    </tr>
+                    <tr>
+                        <th>Cantidad en stock</th>
+                        <td>{{ producto.cantidad_stock }}</td>
+                    </tr>
+                    <tr>
+                        <th>Proveedor</th>
+                        <td>{{ producto.proveedor }}</td>
+                    </tr>
+                    <tr>
+                        <th>Estado</th>
+                        <td><span class="badge bg-info text-dark">{{ producto.estado }}</span></td>
+                    </tr>
+                </table>
+
+                <div class="d-flex justify-content-end gap-2">
+                    <a href="{% url 'productos:lista' %}" class="btn btn-secondary">Volver</a>
+                    <a href="{% url 'productos:editar' producto.pk %}" class="btn btn-warning">Editar</a>
+                    <a href="{% url 'productos:eliminar' producto.pk %}" class="btn btn-danger">Eliminar</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

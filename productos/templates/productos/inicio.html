@@ -1,0 +1,12 @@
+{% extends 'productos/base.html' %}
+
+{% block titulo %}Inicio{% endblock %}
+
+{% block content %}
+<div class="p-5 mb-4 bg-white rounded-3 shadow-sm text-center">
+    <h1 class="display-6">Sistema de Inventario de Productos</h1>
+    <p class="lead">Controla los productos de la tienda o almacén: crea, consulta, actualiza y elimina registros.</p>
+    <a href="{% url 'productos:lista' %}" class="btn btn-primary btn-lg me-2">Ver listado</a>
+    <a href="{% url 'productos:crear' %}" class="btn btn-outline-primary btn-lg">Registrar producto</a>
+</div>
+{% endblock %}
